@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-text">
+        <h1>Hola, soy Paula Martínez</h1>
+        <p>Desarrolladora web apasionada por la tecnología</p>
+        </div>
+    </header>
+
+    <div class="wave"></div>
+
+    <section id="sobre-mi" class="fade-in">
+        <h2>Sobre mí</h2>
+        <p>Soy una estudiante de ASIR2, tengo 21 años, interesada por la tecnología.</p>
+    </section>
+    
+    <section id="habilidades" class="fade-in">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Edición de fotos</li>
+            <li>HTML, CSS y MySQL</li>
+            <li>Python</li>
+            <li>Docker y GitHub</li>
+        </ul>
+    </section>
+
+    <section id="proyectos" class="fade-in">
+        <h2>Proyectos</h2>
+        <div class="proyecto">
+            <h3>TFC</h3>
+            <p>Crear una Inteligencia Artifical desde 0, para implementarla en la web de Andel en un futuro.</p>
+        </div>
+        <div class="proyecto">
+            <h3>Creación de página web</h3>
+            <p>Creación de un portfolio con Flask un microframework de Python que permite crear sitios web dinámicos.</p>
+        </div>
+    </section>
+
+    <section id="timeline" class="fade-in">
+        <h2>Mi Trayectoria Académica</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="year">2015</div>
+                <div class="content">
+                    <h3>Educación Secundaria Obligatoria</h3>
+                    <p>Comencé mis estudios en Fuenllana.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2021</div>
+                <div class="content">
+                    <h3>Grado Medio en TCAE</h3>
+                    <p>Comencé mis estudios en Fuenllana.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2023</div>
+                <div class="content">
+                    <h3>Grado Superior en ASIR</h3>
+                    <p>Estudios realizados en Andel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacto" class="fade-in">
+        <h2>Contacto</h2>
+        <p>Email: paulamartz121@gmail.com</p>
+        <p>GitHub: <a href="https://github.com/PaulaMartiinezGon" target="_blank">Paula Martínez</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 [Paula Martínez González] - Todos los derechos reservados</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".fade-in");
+        
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+        
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+        });
+        </script>
+</body>
+</html>
